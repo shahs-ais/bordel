@@ -223,12 +223,6 @@ stage_iso() {
 
     stage_build_output "${hv_src_path}" "${hv_dst_path}"
 
-    # --- Stage tboot.
-    local tboot_src_path="${machine}/tboot.gz"
-    local tboot_dst_path="${isolinux_subdir}/tboot.gz"
-
-    stage_build_output "${tboot_src_path}" "${tboot_dst_path}"
-
     # --- Stage ACMs & license.
     local acms_src_dir="${machine}/"
     local acms_src_suffix=".acm"
@@ -317,12 +311,6 @@ stage_pxe() {
     local hv_dst_path="${pxe_subdir}/xen.gz"
 
     stage_build_output "${hv_src_path}" "${hv_dst_path}"
-
-    # --- Stage tboot.
-    local tboot_src_path="${machine}/tboot.gz"
-    local tboot_dst_path="${pxe_subdir}/tboot.gz"
-
-    stage_build_output "${tboot_src_path}" "${tboot_dst_path}"
 
     # --- Stage ACMs & license.
     local acms_src_dir="${machine}/"
